@@ -4,6 +4,7 @@ import Navbar from './navbar';
 
 
 const DefaultLayout =  () => {
+    
 
     return (
         <>

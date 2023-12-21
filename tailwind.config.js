@@ -44,6 +44,13 @@ export default {
         'Segoe UI Emoji',
         'Segoe UI Symbol',
         'Noto Color Emoji'
+      ],
+      'title': [
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji'
+
       ]
     }
   },

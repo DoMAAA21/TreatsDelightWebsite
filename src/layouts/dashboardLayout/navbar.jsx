@@ -1,45 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import Sidebar from './sideBar';
-
-
-const Navbar = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    closeMobileMenu();
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setMobileMenuOpen(false);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-
-  }, [isMobileMenuOpen]);
-
+const Navbar = ({ isMobileMenuOpen, toggleMobileMenu }) => {
   return (
     <>
       <header>
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2 border h-20">
-       
+        <nav className="bg-white border-gray-200  border-b h-20 w-full">
+
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-           
-            <div className="flex items-center lg:order-2">
+
+            <div className="flex items-center h-20 lg:order-2">
               <button
                 onClick={toggleMobileMenu}
                 type="button"
@@ -54,49 +23,10 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
+       
       </header>
 
-      {isMobileMenuOpen && (
-        <>
-          <div
-            className="fixed bg-gray-800 w-full h-full top-16 left-0 opacity-50 z-10 mt-14"
-            onClick={closeMobileMenu}
-          ></div>
-          <div
-            className="fixed bg-white w-full lg:hidden transition-all duration-300 mt-0 z-20"
-            id="mobile-menu-2"
-          >
-            <ul className="flex flex-col font-medium">
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pr-4 pl-3 text-gray-800 hover:bg-gray-50 dark:text-white"
-                  aria-current="page"
-                  onClick={closeMobileMenu}
-                >
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="block py-2 pr-4 pl-3 text-gray-800 hover:bg-gray-50 dark:text-white"
-                  aria-current="page"
-                  onClick={closeMobileMenu}
-                >
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="block py-2 pr-4 pl-3  text-gray-800 hover:bg-gray-50 dark:text-white"
-                  aria-current="page"
-                  onClick={closeMobileMenu}
-                >
-                  Home
-                </a>
-              </li>
-            </ul>
-          </div>
-        </>
-      )}
+    
     </>
   );
 };
