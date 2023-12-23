@@ -3,8 +3,8 @@ import { Route, Routes, useRoutes} from 'react-router-dom';
 import DefaultLayout from './layouts/defaultLayout'; 
 import DashboardLayout from './layouts/dashboardLayout';
 //Components
-import Home from './components/home';
-import User from './components/admin/user';
+import Home from './views/home';
+import User from './views/admin/user';
 
 const AppRoutes = () => {
 

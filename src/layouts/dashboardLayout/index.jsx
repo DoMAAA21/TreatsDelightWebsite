@@ -32,7 +32,7 @@ const DashboardLayout = () => {
         <>
             <Navbar isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
             <div className="flex w-full">
-                <div className="ml-64 p-4 w-full h-full">
+                <div className="lg:ml-64 p-4 w-full h-full">
                 <Sidebar isMobileMenuOpen={isMobileMenuOpen} closeMobileMenu={closeMobileMenu} />
                     <Outlet/>
                 </div>
